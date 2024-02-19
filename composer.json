@@ -1,0 +1,23 @@
+{
+    "name": "kirik/web-profiler-php",
+    "description": "PHP library for WEB profiler",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "kirik/web-profiler-ui": "~0.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kirik\\WebProfilerPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kirik",
+            "email": "cyrus.hirvi@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
