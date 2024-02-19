@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirik\WebProfilerPhp\Collector;
+namespace WebProfilerPhp\Collector;
 
 class Log extends Base
 {

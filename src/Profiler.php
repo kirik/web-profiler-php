@@ -1,9 +1,9 @@
 <?php
 
-namespace Kirik\WebProfilerPhp;
+namespace WebProfilerPhp;
 
-use Kirik\WebProfilerPhp\Collector\Base;
-use Kirik\WebProfilerUi\Renderer;
+use WebProfilerPhp\Collector\Base;
+use WebProfilerUi\Renderer;
 
 class Profiler
 {

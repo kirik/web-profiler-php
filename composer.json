@@ -10,7 +10,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Kirik\\WebProfilerPhp\\": "src/"
+            "WebProfilerPhp\\": "src/"
         }
     },
     "authors": [
@@ -18,5 +18,6 @@
             "name": "kirik",
             "email": "cyrus.hirvi@gmail.com"
         }
-    ]
+    ],
+    "minimum-stability": "stable"
 }

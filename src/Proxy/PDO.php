@@ -1,8 +1,8 @@
 <?php
 
-namespace Kirik\WebProfilerPhp\Proxy;
+namespace WebProfilerPhp\Proxy;
 
-use Kirik\WebProfilerPhp\Collector\Database;
+use WebProfilerPhp\Collector\Database;
 use PDO as PDOOriginal;
 
 class PDO extends PDOOriginal

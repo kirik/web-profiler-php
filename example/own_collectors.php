@@ -3,13 +3,13 @@ chdir('../');
 
 require('vendor/autoload.php');
 
-class MyCustomLogCollector extends \Kirik\WebProfilerPhp\Collector\Log
+class MyCustomLogCollector extends \WebProfilerPhp\Collector\Log
 {
 
 }
 
 
-class MyCustomDbCollector extends \Kirik\WebProfilerPhp\Collector\Database
+class MyCustomDbCollector extends \WebProfilerPhp\Collector\Database
 {
     protected const TITLE = 'Db name';
     protected const METRICS = [
@@ -32,7 +32,7 @@ class MyCustomDbCollector extends \Kirik\WebProfilerPhp\Collector\Database
 }
 
 // starting profiler
-\Kirik\WebProfilerPhp\Profiler::start($_SERVER['REQUEST_URI'], []);
+\WebProfilerPhp\Profiler::start($_SERVER['REQUEST_URI'], []);
 
 $span = MyCustomDbCollector::startWithRandomInt('Some query', rand(0, 10000));
 if ($span !== null) {
@@ -45,4 +45,4 @@ if ($span !== null) {
 }
 
 // render profiler's UI
-echo \Kirik\WebProfilerPhp\Profiler::render([]);
+echo \WebProfilerPhp\Profiler::render([]);
