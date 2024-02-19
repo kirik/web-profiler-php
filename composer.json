@@ -5,7 +5,7 @@
     "require": {
         "php": ">=7.0",
         "ext-json": "*",
-        "kirik/web-profiler-ui": "~0.1"
+        "kirik/web-profiler-ui": "^1.0"
     },
     "license": "MIT",
     "autoload": {
