@@ -1,8 +1,8 @@
 <?php
 
-namespace Kirik\WebProfilerPhp\Collector;
+namespace WebProfilerPhp\Collector;
 
-use Kirik\WebProfilerPhp\Profiler;
+use WebProfilerPhp\Profiler;
 
 abstract class Base
 {

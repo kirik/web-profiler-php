@@ -38,13 +38,13 @@ _as you can see there is no `--dev` flag, that means we will be able to profile 
 require('vendor/autoload.php');
 
 // right after including composer, start profiling
-\Kirik\WebProfilerPhp\Profiler::start($_SERVER['REQUEST_URI'], []);
+\WebProfilerPhp\Profiler::start($_SERVER['REQUEST_URI'], []);
 
 // application code
 // ----
 
 // at the very end of application lifecycle, stop profiler and render UI
-echo \Kirik\WebProfilerPhp\Profiler::render([]);
+echo \WebProfilerPhp\Profiler::render([]);
 ```
 
 Until `Profiler::start` was called, no spans are being collected and `Profiler::render` will return empty string.
@@ -53,7 +53,7 @@ cookie+ip condition to enable profiling:
 
 ```php
 if (isset($_COOKIE['__profiler']) && $_SERVER['REMOTE_ADDR'] === '127.0.0.1') {
-    \Kirik\WebProfilerPhp\Profiler::start($_SERVER['REQUEST_URI'], []);
+    \WebProfilerPhp\Profiler::start($_SERVER['REQUEST_URI'], []);
 }
 ```
 
@@ -73,7 +73,7 @@ javascript:(function(){const parts=`; ${document.cookie}`.split('; __profiler=')
 Base example of calling Database collector:
 
 ```php
-$span = \Kirik\WebProfilerPhp\Collector\Database::start('SELECT * FROM users WHERE id = 123');
+$span = \WebProfilerPhp\Collector\Database::start('SELECT * FROM users WHERE id = 123');
 
 // run query
 
@@ -95,7 +95,7 @@ Supported [proxies](#proxies):
 $ajaxResponse = [/*some application response*/];
 
 // adding __profiler key to response (NOTE this will be added ONLY if profiler was started)
-$ajaxResponse = \Kirik\WebProfilerPhp\Profiler::addProfilerToJson($ajaxResponse);
+$ajaxResponse = \WebProfilerPhp\Profiler::addProfilerToJson($ajaxResponse);
 
 echo json_encode($ajaxResponse);
 ```
@@ -114,16 +114,16 @@ own metric.
 
 #### PDO
 
-Use `\Kirik\WebProfilerPhp\Proxy\PDO` class as a proxy class for [PDO](https://www.php.net/manual/en/book.pdo.php).
+Use `\WebProfilerPhp\Proxy\PDO` class as a proxy class for [PDO](https://www.php.net/manual/en/book.pdo.php).
 
 ```php
-$dbh = new \Kirik\WebProfilerPhp\Proxy\PDO($dsn, $user, $password);
+$dbh = new \WebProfilerPhp\Proxy\PDO($dsn, $user, $password);
 // ...
 ```
 
 ### Writing your own collector
 
-Please extend \Kirik\WebProfilerPhp\Collector\Base and override properties. You can also expend Database or Log
+Please extend `\WebProfilerPhp\Collector\Base` and override properties. You can also expend Database or Log
 collectors to implement same logic. Please refer to [example/own_collectors.php](example/own_collectors.php); 
 
 ## Roadmap

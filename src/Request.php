@@ -1,8 +1,8 @@
 <?php
 
-namespace Kirik\WebProfilerPhp;
+namespace WebProfilerPhp;
 
-use Kirik\WebProfilerPhp\Collector\Base;
+use WebProfilerPhp\Collector\Base;
 
 class Request
 {
