@@ -28,7 +28,6 @@ abstract class Base
             'type'  => 'seconds',
         ],
     ];
-    private static $_enabled;
 
     private $_data;
 
@@ -42,10 +41,7 @@ abstract class Base
 
     final protected static function _isEnabled(): bool
     {
-        if (self::$_enabled === null) {
-            self::$_enabled = Profiler::isEnabled();
-        }
-        return self::$_enabled;
+        return Profiler::isEnabled();
     }
 
     final public static function getProperties(): array
