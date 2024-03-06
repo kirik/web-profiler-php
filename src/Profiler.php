@@ -15,6 +15,11 @@ class Profiler
         return self::$_request !== null;
     }
 
+    public static function disable(): void
+    {
+        self::$_request = null;
+    }
+
     /**
      * @param string $requestUri
      * @param array  $requestHeaders
