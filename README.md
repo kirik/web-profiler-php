@@ -138,3 +138,4 @@ collectors to implement the same logic. Please refer to [example/own_collectors.
 - [Symfony web profiler](https://symfony.com/doc/current/profiler.html)
 - [Laravel Telescope Dev Toolbar](https://laravel-news.com/laravel-telescope-dev-toolbar)
 - [Drupal Debug Bar](https://www.drupal.org/project/debug_bar)
+
