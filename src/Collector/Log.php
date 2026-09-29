@@ -32,7 +32,7 @@ class Log extends Base
         parent::__construct($data);
     }
 
-    public static function dump($data, string $level = self::LEVEL_DEBUG, string $caller = null)
+    public static function dump($data, string $level = self::LEVEL_DEBUG, ?string $caller = null)
     {
         if (!self::_isEnabled()) {
             return null;

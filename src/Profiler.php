@@ -72,7 +72,7 @@ class Profiler
      * @param bool $minify
      * @return string
      */
-    public static function render(array $stopResponseHeaders = null, bool $minify = true): string
+    public static function render(?array $stopResponseHeaders = null, bool $minify = true): string
     {
         if (!self::isEnabled()) {
             return '';
